@@ -1,4 +1,3 @@
-'# Hello VuePress!' 
 ---
 home: true
 heroImage: /vue-logo.png
