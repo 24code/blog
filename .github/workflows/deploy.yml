@@ -10,8 +10,8 @@ jobs:
     name: '部署'
     runs-on: ubuntu-latest
     steps:
-    - name: 
       run: |
+        cd ..
         npm run docs:build
         cd docs/.vuepress/dist
         git init
