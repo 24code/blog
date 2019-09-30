@@ -1,21 +1,20 @@
 name: deploy
 
-on: 
+on:
   push:
     branches:
       - master
-
 jobs:
-  deploy:
-    name: '部署'
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: all 
-        run: |
-          cd ..
-          npm run docs:build
-          cd docs/.vuepress/dist
-          git init
-          git add -A
-          git commit -m 'deploy'
-          git push -f git@github.com:24code/blog.git master:gh-pages
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs/.vuepress/dist
+        BUILD_SCRIPT: npm install && npm run docs:build
