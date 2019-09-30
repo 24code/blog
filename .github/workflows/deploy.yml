@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: all 
-      run: |
-        cd ..
-        npm run docs:build
-        cd docs/.vuepress/dist
-        git init
-        git add -A
-        git commit -m 'deploy'
-        git push -f git@github.com:24code/blog.git master:gh-pages
+        run: |
+          cd ..
+          npm run docs:build
+          cd docs/.vuepress/dist
+          git init
+          git add -A
+          git commit -m 'deploy'
+          git push -f git@github.com:24code/blog.git master:gh-pages
