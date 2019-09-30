@@ -7,9 +7,10 @@ on:
 
 jobs:
   deploy:
-    name: '部署'
+    - name: 部署
     runs-on: ubuntu-latest
     steps:
+      - name: all 
       run: |
         cd ..
         npm run docs:build
