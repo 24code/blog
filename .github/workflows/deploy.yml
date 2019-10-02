@@ -17,4 +17,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: docs/.vuepress/dist
-        BUILD_SCRIPT: npm install && npm run docs:build
+        BUILD_SCRIPT: npm install && npm run docs:build && echo theme: jekyll-theme-merlot > docs/.vuepress/dist/_config.yml
