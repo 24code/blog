@@ -1,61 +1,89 @@
+// .vuepress/config.js
+
 module.exports = {
+
   base: '/blog/',
-  title: '网站标题',
-  description: '网站描述',
-  // 注入到当前页面的 HTML <head> 中的标签
-  head: [
-    ['link', {
-      rel: 'icon',
-      href: '/favicon.ico'
-    }], // 增加一个自定义的 favicon(网页标签的图标)
-  ],
-  markdown: {
-    lineNumbers: true // 代码块显示行号
+
+  // 网站 Title
+  title: 'My Blog',
+
+  // 网站描述
+  description: 'This is my blog',
+
+  // 网站语言
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+    },
   },
 
-  // 导航
+  // 使用的主题
+  theme: 'meteorlxy',
+
+  // 主题配置
   themeConfig: {
-    repo: 'akbq2008/Components',
-    // 将会自动在每个页面的导航栏生成生成一个 GitHub 链接，以及在页面的底部生成一个 "Edit this page" 链接。
-    repoLabel: '查看源码',
-    editLinks: true,
-    // 默认为 "Edit this page"
-    editLinkText: '帮助我们改善此页面！',
-    serviceWorker: {
-      updatePopup: true,
-      //将开启一个能够刷新内容的弹窗。当网站更新（即 Service Worker 更新）时，它会提供一个 refresh 按钮，允许用户立刻刷新内容。
-      // 如果设置为 true, 默认的文本配置将是:  
-      updatePopup: {
-        message: "有新的资源可用",
-        buttonText: "点击刷新"
-      }
+    // 主题语言，参考下方 [主题语言] 章节
+    lang: 'zh-CN',
+
+    // 上方 header 的相关设置 (可选)
+    header: {
+      // header 的背景，可以使用图片，或者随机变化的图案（geopattern）
+      background: {
+        // 使用图片的 URL，如果设置了图片 URL，则不会生成随机变化的图案，下面的 useGeo 将失效
+        url: '/assets/img/bg.jpg',
+
+        // 使用随机变化的图案，如果设置为 false，且没有设置图片 URL，将显示为空白背景
+        useGeo: true,
+      },
+
+      // 是否在 header 显示标题
+      showTitle: true,
     },
-    lastUpdated: 'Last Updated', //最后更新时间
-    displayAllHeaders: true,
-    // 侧边栏只会显示由当前活动页面的标题（headers）组成的链接，你可以将 themeConfig.displayAllHeaders 设置为 true 来显示所有页面的标题链接：
-    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
-    lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
-    nav: [ // 内部链接 以docs为根目录
-      {
-        text: '我的博客',
-        link: 'https://www.suanliutudousi.com/'
-      }, // 外部链接
-      // 下拉列表
-      {
-        text: 'GitHub',
-        items: [{
-          text: 'GitHub地址',
-          link: 'https://github.com/24code'
-        }
-        ]
-      }
+
+    // 底部 footer 的相关设置 (可选)
+    footer: {
+      // 是否显示 Powered by VuePress
+      poweredBy: true,
+
+      // 是否显示使用的主题
+      poweredByTheme: true,
+
+      // 添加自定义 footer (支持 HTML)
+      custom: 'Copyright 2018-present <a href="https://github.com/meteorlxy" target="_blank">meteorlxy</a> | MIT License',
+    },
+
+    // 个人信息卡片相关设置 (可选)
+    infoCard: {
+      // 卡片 header 的背景，可以使用图片，或者随机变化的图案（geopattern）
+      headerBackground: {
+        // 使用图片的 URL，如果设置了图片 URL，则不会生成随机变化的图案，下面的 useGeo 将失效
+        url: '/assets/img/bg.jpg',
+
+        // 使用随机变化的图案，如果设置为 false，且没有设置图片 URL，将显示为空白背景
+        useGeo: true,
+      },
+    },
+
+    // 是否显示文章的最近更新时间
+    lastUpdated: true,
+
+    // 顶部导航栏内容
+    nav: [
+      { text: '首页', link: '/', exact: true },
+      { text: '瞎折腾', link: '/sideproj/', exact: false },
     ],
-    sidebar: [{
-      title: "pc模块",
-      collapsable: true
-    }, {
-      title: "moblie模块",
-      collapsable: true
-    }]
-  }
-} 
+
+    // 分页配置 (可选)
+    pagination: {
+      perPage: 5,
+    },
+
+    // 默认页面（可选，默认全为 true）
+    defaultPages: {
+      // 是否允许主题自动添加 Home 页面 (url: /)
+      home: true,
+      // 是否允许主题自动添加 sideproj 页面 (url: /sideproj/)
+      sideproj: true,
+    },
+  },
+}
