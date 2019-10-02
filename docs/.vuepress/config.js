@@ -46,26 +46,17 @@ module.exports = {
         text: 'GitHub',
         items: [{
           text: 'GitHub地址',
-          link: 'https://github.com/akbq2008'
+          link: 'https://github.com/24code'
         }
         ]
       }
     ],
     sidebar: [{
       title: "pc模块",
-      collapsable: true,
-      children: [
-        '/pc/',
-        '/pc/test',
-      ]
+      collapsable: true
     }, {
       title: "moblie模块",
-      collapsable: true,
-      children: [
-        '/mobile/',
-        '/mobile/one',
-        '/mobile/two',
-      ]
+      collapsable: true
     }]
   }
 } 
