@@ -5,10 +5,10 @@ module.exports = {
   base: '/blog/',
 
   // 网站 Title
-  title: 'My Blog',
+  title: '24code(to for code)',
 
   // 网站描述
-  description: 'This is my blog',
+  description: 'hope for life',
 
   // 网站语言
   locales: {
@@ -30,7 +30,7 @@ module.exports = {
       // header 的背景，可以使用图片，或者随机变化的图案（geopattern）
       background: {
         // 使用图片的 URL，如果设置了图片 URL，则不会生成随机变化的图案，下面的 useGeo 将失效
-        url: '/assets/img/bg.jpg',
+        url: '/assets/img/hope_for_life.jpg',
 
         // 使用随机变化的图案，如果设置为 false，且没有设置图片 URL，将显示为空白背景
         useGeo: true,
@@ -49,19 +49,7 @@ module.exports = {
       poweredByTheme: true,
 
       // 添加自定义 footer (支持 HTML)
-      custom: 'Copyright 2018-present <a href="https://github.com/meteorlxy" target="_blank">meteorlxy</a> | MIT License',
-    },
-
-    // 个人信息卡片相关设置 (可选)
-    infoCard: {
-      // 卡片 header 的背景，可以使用图片，或者随机变化的图案（geopattern）
-      headerBackground: {
-        // 使用图片的 URL，如果设置了图片 URL，则不会生成随机变化的图案，下面的 useGeo 将失效
-        url: '/assets/img/bg.jpg',
-
-        // 使用随机变化的图案，如果设置为 false，且没有设置图片 URL，将显示为空白背景
-        useGeo: true,
-      },
+      // custom: 'Copyright 2018-present <a href="https://github.com/meteorlxy" target="_blank">meteorlxy</a> | MIT License',
     },
 
     // 是否显示文章的最近更新时间
@@ -70,7 +58,9 @@ module.exports = {
     // 顶部导航栏内容
     nav: [
       { text: '首页', link: '/', exact: true },
-      { text: '瞎折腾', link: '/sideproj/', exact: false },
+      { text: '博客', link: '/posts/', exact: true },
+      { text: '专注', link: '/posts/categories/focus.html', exact: false },
+      { text: '瞎折腾', link: '/posts/categories/sideproj.html', exact: false },
     ],
 
     // 分页配置 (可选)
